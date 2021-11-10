@@ -11,29 +11,40 @@ $(".key").click(function() {
   var pressedKey = this.classList[1];
   // Call playSound function and pass in the string.
   playSound(pressedKey);
+  // Call keyAnimation function to change key background color on click.
+  keyAnimation(pressedKey);
 })
 
 // Starts playing the audio corresponding to the received key
 function playSound(key) {
   switch (key) {
     case "key-g":
-      $("." + key).addClass("pressed-" + key);
       keyG.play();
       break;
 
     case "key-r":
-      $("." + key).addClass("pressed-" + key);
       keyR.play();
       break;
 
     case "key-y":
-      $("." + key).addClass("pressed-" + key);
       keyY.play();
       break;
 
     case "key-b":
-      $("." + key).addClass("pressed-" + key);
       keyB.play();
       break;
   }
+}
+
+
+// Changes the specified key background color by adding a class to the key element temporarily
+function keyAnimation(key) {
+  // Get the pressed key element
+  var activeKey = $("." + key);
+  // Add a class to it then remove it after 200ms
+  activeKey.addClass("pressed-" + key);
+  setTimeout(function() {
+    activeKey.removeClass("pressed-" + key);
+  }, 200);
+
 }
