@@ -17,18 +17,22 @@ $(".key").click(function() {
 function playSound(key) {
   switch (key) {
     case "key-g":
+      $("." + key).addClass("pressed-" + key);
       keyG.play();
       break;
 
     case "key-r":
+      $("." + key).addClass("pressed-" + key);
       keyR.play();
       break;
 
     case "key-y":
+      $("." + key).addClass("pressed-" + key);
       keyY.play();
       break;
 
     case "key-b":
+      $("." + key).addClass("pressed-" + key);
       keyB.play();
       break;
   }

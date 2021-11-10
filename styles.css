@@ -25,12 +25,20 @@ body {
   left: 50px;
 }
 
+.pressed-key-g {
+  background: #76b57a;
+}
+
 .key-r {
   border-radius: 0 100% 0 0;
   background: #ef3737;
   position: absolute;
   top: 50px;
   right: 50px;
+}
+
+.pressed-key-r {
+  background: #f07f7f;
 }
 
 .key-y {
@@ -41,12 +49,20 @@ body {
   left: 50px;
 }
 
+.pressed-key-y {
+  background: #f7f068;
+}
+
 .key-b {
   border-radius: 0 0 100% 0;
   background: #214496;
   position: absolute;
   bottom: 50px;
   right: 50px;
+}
+
+.pressed-key-b {
+  background: #4e6496;
 }
 
 .center {
