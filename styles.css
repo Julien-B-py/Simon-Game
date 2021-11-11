@@ -1,6 +1,16 @@
 body {
   background: #223b4f;
   color: #19d6e7;
+  font-family: 'Odibee Sans', cursive;
+}
+
+h1 {
+  font-size: 100px;
+  text-align: center;
+  background: linear-gradient(to bottom, #19d6e7 0%, #11909c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(2px 2px 0 rgba(0, 0, 0, 0.9)) ;
 }
 
 .game {
@@ -9,7 +19,7 @@ body {
   height: 500px;
   border-radius: 50%;
   position: relative;
-  margin: 200px auto;
+  margin: 133px auto 200px;
 }
 
 .key {
@@ -27,6 +37,7 @@ body {
 
 .pressed-key-g {
   background: #76b57a;
+  box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.9);
 }
 
 .key-r {
@@ -39,6 +50,7 @@ body {
 
 .pressed-key-r {
   background: #f07f7f;
+  box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.9);
 }
 
 .key-y {
@@ -51,6 +63,7 @@ body {
 
 .pressed-key-y {
   background: #f7f068;
+  box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.9);
 }
 
 .key-b {
@@ -63,6 +76,7 @@ body {
 
 .pressed-key-b {
   background: #4e6496;
+  box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.9);
 }
 
 .center {
