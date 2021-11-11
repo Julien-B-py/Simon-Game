@@ -15,6 +15,11 @@ var gameStarted = false;
 // Status var to determine the current state of the game
 var gameStatus = "pick";
 
+
+var playerSequence = [];
+
+var currentPlayerKey = 0;
+
 // Bind a click event handler to all 4 keys
 $(".key").click(function() {
   // If game is not started, switch the boolean to true and call game function
@@ -32,9 +37,36 @@ $(".key").click(function() {
     // Call keyAnimation function to change key background color on click.
     keyAnimation(pressedKey);
 
+    if (gameStatus = "player_sequence") {
+      playerSequence.push(pressedKey);
+
+      if (playerSequence[currentPlayerKey] !== gameSequence[currentPlayerKey]) {
+
+        $("h2").text("You made a mistake...");
+        return;
+        // Add game reset
+
+      }
+
+      currentPlayerKey++;
+
+      if (currentPlayerKey === gameSequence.length) {
+        $("h2").text("Well done!");
+        gameStatus = "pick";
+        currentPlayerKey = 0;
+        playerSequence = [];
+
+        setTimeout(function() {
+          game();
+        }, 500);
+
+
+      }
+    }
+
   }
 
-})
+});
 
 // Starts playing the audio corresponding to the received key
 function playSound(key) {
@@ -77,36 +109,52 @@ function game() {
 
   if (gameStatus === "pick") {
 
-    // New round : add a new key to the sequence
-    randomKey = keys[Math.floor(Math.random() * keys.length)];
-    gameSequence.push(randomKey);
-
-    gameStatus = "bot_sequence";
+    pickNewKey();
 
   }
-
-
 
   if (gameStatus === "bot_sequence") {
 
-    // Play every single key of the bot sequence
-    setTimeout(function() {
-
-      // Call playSound function and pass in the string.
-      playSound(gameSequence[keysCount]);
-      // Call keyAnimation function to change key background color on click.
-      keyAnimation(gameSequence[keysCount]);
-
-      keysCount++;
-
-      if (keysCount < gameSequence.length) {
-        game();
-      } else {
-        keysCount = 0;
-        gameStatus = "pick";
-      }
-
-    }, 1000);
+    playSequenceToReproduce();
 
   }
+
+}
+
+
+function pickNewKey() {
+  $("h2").text("Listen carefully...");
+
+  // New round : add a new key to the sequence
+  randomKey = keys[Math.floor(Math.random() * keys.length)];
+  gameSequence.push(randomKey);
+
+  gameStatus = "bot_sequence";
+}
+
+
+function playSequenceToReproduce() {
+  // Play every single key of the bot sequence
+  setTimeout(function() {
+
+    // Call playSound function and pass in the string.
+    playSound(gameSequence[keysCount]);
+    // Call keyAnimation function to change key background color on click.
+    keyAnimation(gameSequence[keysCount]);
+
+    keysCount++;
+
+    if (keysCount < gameSequence.length) {
+      game();
+    } else {
+      keysCount = 0;
+      gameStatus = "player_sequence";
+
+      setTimeout(function() {
+        $("h2").text("Your turn!");
+      }, 500);
+
+    }
+
+  }, 1000);
 }
