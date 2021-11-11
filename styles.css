@@ -2,19 +2,15 @@ body {
   background: #223b4f;
   color: #19d6e7;
   font-family: 'Odibee Sans', cursive;
+  text-align: center;
 }
 
 h1 {
   font-size: 100px;
-  text-align: center;
   background: linear-gradient(to bottom, #19d6e7 0%, #11909c 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  filter: drop-shadow(2px 2px 0 rgba(0, 0, 0, 0.9)) ;
-}
-
-h2 {
-    text-align: center;
+  filter: drop-shadow(2px 2px 0 rgba(0, 0, 0, 0.9));
 }
 
 .game {
@@ -92,4 +88,9 @@ h2 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.score-line {
+  display: flex;
+  justify-content: center;
 }

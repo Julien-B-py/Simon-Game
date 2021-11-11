@@ -8,23 +8,26 @@ var keyB = new Audio("audio/4.mp3");
 var keys = ["key-g", "key-r", "key-y", "key-b"];
 // Variable used to perform gameSequence playback
 var keysCount = 0;
-// Var used to store the sequence of keys the player will have to reproduce.
+// Array used to store the sequence of keys the player will have to reproduce.
 var gameSequence = [];
 // Boolean var to start the game
 var gameStarted = false;
 // Status var to determine the current state of the game
 var gameStatus = "pick";
-
-
+// Array used to store the sequence of keys the player is performing.
 var playerSequence = [];
-
+// Variable used to compare game and player sequences key by key
 var currentPlayerKey = 0;
+// Player score
+var score = $(".score").text();
 
 // Bind a click event handler to all 4 keys
 $(".key").click(function() {
   // If game is not started, switch the boolean to true and call game function
   if (gameStarted === false) {
     gameStarted = true;
+    score = 0;
+    $(".score").text(score);
     game();
   }
   // If game is started
@@ -43,6 +46,10 @@ $(".key").click(function() {
       if (playerSequence[currentPlayerKey] !== gameSequence[currentPlayerKey]) {
 
         $("h2").text("You made a mistake...");
+
+
+        resetGame();
+
         return;
         // Add game reset
 
@@ -55,6 +62,9 @@ $(".key").click(function() {
         gameStatus = "pick";
         currentPlayerKey = 0;
         playerSequence = [];
+
+
+        incrementScore();
 
         setTimeout(function() {
           game();
@@ -157,4 +167,30 @@ function playSequenceToReproduce() {
     }
 
   }, 1000);
+}
+
+
+function incrementScore() {
+  score++;
+  $(".score").text(score);
+}
+
+
+
+function resetGame() {
+
+
+  setTimeout(function() {
+
+    keysCount = 0;
+    gameSequence = [];
+    gameStarted = false;
+    gameStatus = "pick";
+    playerSequence = [];
+    currentPlayerKey = 0;
+    $("h2").text("Click on any key to start");
+
+  }, 500);
+
+
 }
