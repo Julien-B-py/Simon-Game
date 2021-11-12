@@ -28,6 +28,10 @@ h1 {
   height: 185px;
 }
 
+.key:hover {
+  cursor: pointer;
+}
+
 .key-g {
   border-radius: 100% 0 0 0;
   background: #40b648;
@@ -123,4 +127,45 @@ h1 {
 .replay-button:hover {
   cursor: pointer;
   color: #1cecff;
+}
+
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 70px;
+  }
+  
+  .game {
+    width: 350px;
+    height: 350px;
+  }
+
+  .key {
+    width: 130px;
+    height: 130px;
+  }
+
+  .key-g {
+    top: 35px;
+    left: 35px;
+  }
+
+  .key-r {
+    top: 35px;
+    right: 35px;
+  }
+
+  .key-y {
+    bottom: 35px;
+    left: 35px;
+  }
+
+  .key-b {
+    bottom: 35px;
+    right: 35px;
+  }
+
+  .center {
+    width: 70px;
+    height: 70px;
+  }
 }
