@@ -11,6 +11,7 @@ h1 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   filter: drop-shadow(2px 2px 0 rgba(0, 0, 0, 0.9));
+  margin: 50px 0;
 }
 
 .game {
@@ -19,7 +20,7 @@ h1 {
   height: 500px;
   border-radius: 50%;
   position: relative;
-  margin: 133px auto 200px;
+  margin: 80px auto;
 }
 
 .key {
@@ -93,4 +94,33 @@ h1 {
 .score-line {
   display: flex;
   justify-content: center;
+}
+
+.scores {
+  background: #3b5061;
+  font-size: 20px;
+  width: max-content;
+  padding: 25px 50px;
+  border-radius: 10px;
+  position: fixed;
+  margin: 5% auto;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  border: 2px solid #fff;
+  display: none;
+}
+
+.score, .hi-score {
+  margin-left: 6px;
+}
+
+.replay-button {
+  margin-top: 15px;
+  font-size: 30px;
+}
+
+.replay-button:hover {
+  cursor: pointer;
+  color: #1cecff;
 }

@@ -48,6 +48,13 @@ $(".key").click(function() {
         $("h2").text("You made a mistake...");
 
 
+        if (score > $(".hi-score").text()) {
+          $(".hi-score").text(score);
+        }
+
+        // Display score div
+        $(".scores").slideDown();
+
         resetGame();
 
         return;
@@ -194,3 +201,11 @@ function resetGame() {
 
 
 }
+
+
+
+$(".replay-button").click(function() {
+
+  $(".scores").slideUp();
+
+});
