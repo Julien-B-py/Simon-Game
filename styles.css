@@ -16,16 +16,18 @@ h1 {
 
 .game {
   background: black;
-  width: 500px;
-  height: 500px;
   border-radius: 50%;
   position: relative;
   margin: 80px auto;
+  max-width: 500px;
+  width: 80vw;
+  height: 80vw;
+  max-height: 500px;
 }
 
 .key {
-  width: 185px;
-  height: 185px;
+  width: 37%;
+  height: 37%;
 }
 
 .key:hover {
@@ -36,8 +38,8 @@ h1 {
   border-radius: 100% 0 0 0;
   background: #40b648;
   position: absolute;
-  top: 50px;
-  left: 50px;
+  top: 10%;
+  left: 10%;
 }
 
 .pressed-key-g {
@@ -49,8 +51,8 @@ h1 {
   border-radius: 0 100% 0 0;
   background: #ef3737;
   position: absolute;
-  top: 50px;
-  right: 50px;
+  top: 10%;
+  right: 10%;
 }
 
 .pressed-key-r {
@@ -62,8 +64,8 @@ h1 {
   border-radius: 0 0 0 100%;
   background: #f8ec1e;
   position: absolute;
-  bottom: 50px;
-  left: 50px;
+  bottom: 10%;
+  left: 10%;
 }
 
 .pressed-key-y {
@@ -75,8 +77,8 @@ h1 {
   border-radius: 0 0 100% 0;
   background: #214496;
   position: absolute;
-  bottom: 50px;
-  right: 50px;
+  bottom: 10%;
+  right: 10%;
 }
 
 .pressed-key-b {
@@ -86,8 +88,8 @@ h1 {
 
 .center {
   background: black;
-  width: 100px;
-  height: 100px;
+  width: 20%;
+  height: 20%;
   border-radius: 50%;
   position: absolute;
   top: 50%;
@@ -132,40 +134,5 @@ h1 {
 @media screen and (max-width: 768px) {
   h1 {
     font-size: 70px;
-  }
-  
-  .game {
-    width: 350px;
-    height: 350px;
-  }
-
-  .key {
-    width: 130px;
-    height: 130px;
-  }
-
-  .key-g {
-    top: 35px;
-    left: 35px;
-  }
-
-  .key-r {
-    top: 35px;
-    right: 35px;
-  }
-
-  .key-y {
-    bottom: 35px;
-    left: 35px;
-  }
-
-  .key-b {
-    bottom: 35px;
-    right: 35px;
-  }
-
-  .center {
-    width: 70px;
-    height: 70px;
   }
 }
