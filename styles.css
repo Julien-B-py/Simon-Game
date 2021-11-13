@@ -14,15 +14,22 @@ h1 {
   margin: 50px 0;
 }
 
+h2 {
+  position: relative;
+  top: 50%;
+  z-index: 50;
+  transform: translate(0, -50%);
+}
+
 .game {
   background: black;
   border-radius: 50%;
   position: relative;
   margin: 80px auto;
-  max-width: 500px;
   width: 80vw;
   height: 80vw;
-  max-height: 500px;
+  max-height: 80vh;
+  max-width: 80vh;
 }
 
 .key {
@@ -109,12 +116,14 @@ h1 {
   padding: 25px 50px;
   border-radius: 10px;
   position: fixed;
-  margin: 5% auto;
+  margin: 0 auto;
   left: 0;
   right: 0;
   z-index: 100;
-  border: 2px solid #fff;
+  border: 2px solid #596d7d;
   display: none;
+  top: 50%;
+  transform: translate(0, -50%);
 }
 
 .score, .hi-score {
@@ -134,5 +143,9 @@ h1 {
 @media screen and (max-width: 768px) {
   h1 {
     font-size: 70px;
+  }
+
+  h2 {
+    font-size: 17px;
   }
 }
